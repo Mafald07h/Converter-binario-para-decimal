@@ -1,0 +1,21 @@
+
+.header__container {
+    display: flex;
+    justify-content: left;
+    flex-direction: column;
+}
+
+.header__title {
+    font-size: 3rem;
+}
+
+.header__text {
+    text-align: left;
+    margin: 10px 0px;
+}
+
+.header__input {
+    width: 55%;
+    margin: 10px auto;
+    padding: 5px;
+}

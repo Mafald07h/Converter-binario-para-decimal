@@ -6,8 +6,10 @@ function App() {
 
   return (
     <>
-    <Header></Header>
-     <Button buttonTitle={"Converter"}></Button>
+    <div className="container">
+      <Header></Header>
+       
+    </div>
     </>
   )
 }

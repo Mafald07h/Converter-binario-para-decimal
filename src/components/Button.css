@@ -2,4 +2,12 @@
     border: none;
     padding: 15px 30px;
     cursor: pointer;
+    transition: 200ms;
+    width: 15%;
+    margin: 10px auto;
+}
+
+.button-style:hover {
+    transition: 200ms;
+    background-color: rgb(176, 176, 176);
 }

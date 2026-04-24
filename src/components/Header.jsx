@@ -1,15 +1,51 @@
-import "./Header.css"
+import "./Header.css";
+import Button from "./Button.jsx";
+import React, { useState } from "react";
 
+function Header() {
+    const [inputBinario, setInputBinario] = useState('');
+    const [resultadoDecimal, setResultadoDecimal] = useState(0);
 
-function Header(){
+    const converterParaDecimal = () => {
+        // Remove espaços e inverte a string para facilitar o cálculo da potência
+        const listaNumeros = inputBinario.split("").reverse();
+        
+        let valorAcumulado = 0;
+
+        for (let i = 0; i < listaNumeros.length; i++) {
+            // Verifica se o dígito é válido (0 ou 1)
+            const bit = parseInt(listaNumeros[i], 10);
+            if (bit === 1) {
+                valorAcumulado += Math.pow(2, i);
+            }
+        }
+        
+        setResultadoDecimal(valorAcumulado);
+    };
+
     return (
-        <>
-            <header>
-                <h1>Converter de binário para decimal </h1>
-                <p>Desenvolvido em React JS + Javascript</p>
-            </header>
-        </>
-    )
+        <header>
+            <h1 className="header__title">Converter de binário para decimal</h1>
+            <div className="header__container">
+                <p className="header__text">Desenvolvido em React JS + Javascript</p>
+                
+                <input 
+                    type="text" 
+                    placeholder="Digite o número em binário" 
+                    className="header__input" 
+                    value={inputBinario} 
+                    onChange={(e) => setInputBinario(e.target.value)}
+                />
+
+                {/* Adicionamos o evento de clique no botão */}
+                <div onClick={converterParaDecimal}>
+                    <Button buttonTitle={"Converter"} />
+                </div>
+
+                <p className="resultado">Resultado: {resultadoDecimal}</p>
+            </div>
+        </header>
+    );
 }
 
-export default Header
+export default Header;
