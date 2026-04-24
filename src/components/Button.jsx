@@ -1,9 +1,9 @@
-import "Button.css"
+import "./Button.css"
 
 function Button({buttonTitle}){
     return (
         <>
-            <button>{buttonTitle}</button>
+            <button className="button-style">{buttonTitle}</button>
         </>
     )
 }
