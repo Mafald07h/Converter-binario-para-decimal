@@ -7,13 +7,11 @@ function Header() {
     const [resultadoDecimal, setResultadoDecimal] = useState(0);
 
     const converterParaDecimal = () => {
-        // Remove espaços e inverte a string para facilitar o cálculo da potência
         const listaNumeros = inputBinario.split("").reverse();
         
         let valorAcumulado = 0;
 
         for (let i = 0; i < listaNumeros.length; i++) {
-            // Verifica se o dígito é válido (0 ou 1)
             const bit = parseInt(listaNumeros[i], 10);
             if (bit === 1) {
                 valorAcumulado += Math.pow(2, i);
@@ -36,8 +34,7 @@ function Header() {
                     value={inputBinario} 
                     onChange={(e) => setInputBinario(e.target.value)}
                 />
-
-                {/* Adicionamos o evento de clique no botão */}
+                
                 <div onClick={converterParaDecimal}>
                     <Button buttonTitle={"Converter"} />
                 </div>
